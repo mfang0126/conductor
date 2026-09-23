@@ -1,17 +1,17 @@
 ---
-name: conductor
+name: crew-contract
 description: "Use when any task should use main-sub delegation (主-子分工)."
 license: MIT
 metadata:
   hermes:
-    version: 1.3.0
+    version: 1.3.1
     author: Ming Fang
     tags: [delegation, subagents, orchestration, review, workflow]
     category: autonomous-ai-agents
     related_skills: [hermes-delegation-routing, parallel-workstream-orchestration, subagent-driven-development]
 ---
 
-# Conductor — Main–Sub Delegation (主-子分工)
+# Crew Contract — Main–Sub Delegation (主-子分工)
 
 The main agent **conducts** — it doesn't play every instrument. The general division of labor for any substantial work, adapted from the "Astra + Luna" orchestrator pattern. The **main agent** keeps the goal, constraints, evidence and final judgment; bounded **subagents** do noisy execution; an **independent reviewer** checks material changes before anything is called done. Applies to engineering, research, writing, data, ops — anything. Project-specific processes plug in from their own docs; this skill is the method layer.
 
@@ -149,5 +149,6 @@ Harness-specific dispatch mechanics (Hermes example): [`references/hermes-mechan
 
 Adapted from the "Astra + Luna" orchestrator (execution roles at high effort + a strong, low-effort, read-only reviewer) and the sub-agent pattern literature. Method validation report and sources referenced in `references/evidence-index.md`.
 
+- v1.3.1 (2026-09-23) — renamed `conductor` → `crew-contract` (marketplace name-uniqueness; method layer unchanged).
 - v1.3.0 (2026-09-23) — model-agnostic route selection (route card + candidate-intersection rule); layered review-independence criterion + review protocol checklist; admission gate + cache-ordered cost levers; ambiguity contract (needs_input return block); optional manifest checkpoint protocol; verification priority; no hardcoded model routes (grep-enforced).
 - v1.2.0 (2026-09-21) — intent-driven defaults, orchestration signals, truncation recovery, unresolved-limits discipline, evidence anchors.

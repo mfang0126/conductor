@@ -1,4 +1,4 @@
-# Conductor — Main–Sub Delegation (主-子分工)
+# Crew Contract — Main–Sub Delegation (主-子分工)
 
 *The main agent conducts — it doesn't play every instrument. A method-layer skill for any agent harness: a main agent keeps goal/constraints/evidence/final judgment, bounded subagents do noisy execution, and an independent reviewer gates material changes — with model-agnostic route selection built in.*
 
@@ -6,7 +6,7 @@
 
 ## Why
 
-Multi-agent work fails in predictable ways: reviewers grade their own family's output more kindly (measured family bias: 3.4–8.4pp), uncoordinated parallel agents amplify errors up to 17.2×, orchestration costs ~15× chat tokens, and truncated subagents lose their work. This skill encodes what the evidence supports — and just as importantly, when *not* to orchestrate.
+Multi-agent work fails in predictable ways: reviewers grade their own family's output more kindly (measured family bias: 3.4–8.4pp), uncoordinated parallel agents amplify errors up to 17.2×, orchestration costs ~15× chat tokens, and truncated subagents lose their work. Crew Contract encodes what the evidence supports — and just as importantly, when *not* to orchestrate.
 
 ## What you get
 
@@ -19,7 +19,7 @@ Multi-agent work fails in predictable ways: reviewers grade their own family's o
 ## Install
 
 ```bash
-npx skills add mfang0126/conductor   # works across 77+ agent CLIs
+npx skills add mfang0126/crew-contract   # works across 77+ agent CLIs
 ```
 
 Or clone the repo and point your agent's skills loader at the directory. Hermes Agent users can also install from the repo path.
@@ -62,4 +62,4 @@ MIT. Feedback and issues welcome.
 
 ## 中文简介
 
-Conductor（主-子分工）——**主代理是指挥，不亲自演奏每个乐器**。方法层 skill：主代理把握目标/约束/证据/最终判断，有界子代理执行，独立评审把关——内置模型无关的路线卡选择机制。证据支撑的护栏包括：准入闸门、缓存优先的成本杠杆、验证优先级（确定性检查 > 弱验证者 > LLM 裁判）、可选 manifest 断点协议；并诚实记录未解局限。详细说明见 [README.zh-CN.md](README.zh-CN.md)。
+Crew Contract（主-子分工）——**主代理是指挥，不亲自演奏每个乐器**。方法层 skill：主代理把握目标/约束/证据/最终判断，有界子代理执行，独立评审把关——内置模型无关的路线卡选择机制。证据支撑的护栏包括：准入闸门、缓存优先的成本杠杆、验证优先级（确定性检查 > 弱验证者 > LLM 裁判）、可选 manifest 断点协议；并诚实记录未解局限。详细说明见 [README.zh-CN.md](README.zh-CN.md)。

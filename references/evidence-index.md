@@ -1,6 +1,6 @@
 # Evidence Index — v1.3.0 rules → public sources (frozen map)
 
-Rule-to-source map for `conductor` v1.3.0. Frozen at release time — update only with a version bump. Evidence levels: `官方` = first-party papers / vendor engineering blogs / official docs; `学术` = independent preprints; `社区` = practitioner write-ups. Dates are the source's published/updated date.
+Rule-to-source map for `crew-contract` (v1.3.0 rules — unchanged by the v1.3.1 rename). Frozen at release time — update only with a version bump. Evidence levels: `官方` = first-party papers / vendor engineering blogs / official docs; `学术` = independent preprints; `社区` = practitioner write-ups. Dates are the source's published/updated date.
 
 | Rule in SKILL.md | Evidence level | Representative source |
 |---|---|---|
