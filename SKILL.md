@@ -4,7 +4,7 @@ description: "Use when any task should use main-sub delegation (主-子分工)."
 license: MIT
 metadata:
   hermes:
-    version: 1.3.1
+    version: 1.4.0
     author: Ming Fang
     tags: [delegation, subagents, orchestration, review, workflow]
     category: autonomous-ai-agents
@@ -33,6 +33,7 @@ Defaults (adjust when the task clearly calls for it — note why):
 - At least one independent-context check before anything is called done; skip only for low-risk changes that were directly verified — and say so.
 - Review depth scales with risk: separate context → evidence-anchored findings → cross-model / ground-truth when value warrants.
 - Effort scales with task shape: one narrow child for a small lookup; several for genuinely independent streams — count coordination cost first (see "Orchestration signals").
+- Handing work down fits by shape — clarity × verifiability × blast radius — not by a fixed list of cases (see "Handing work down (intent-driven)").
 
 ## Roles
 
@@ -119,6 +120,16 @@ Orchestration is not free: the main stays in the loop for the whole task, and ev
 
 Cost levers in order — **cache hit rate → model routing → effort level**. Children share the parent's prompt cache only with byte-identical prefixes, same model, same effort; switch models at compaction moments (the cache miss is already being paid there). Cheap execution tiers do not cancel orchestration overhead.
 
+## Handing work down (intent-driven)
+
+Defaults, not rules — the main agent sizes each hand-down to the task in front of it.
+
+**Fit by shape, not by case.** Judge fit by clarity × verifiability × blast radius (how far a mistake reaches × how reversible it is): clear + mechanically checkable + low blast radius → a good default for handing work to a cheaper executor; fuzzy, novel, or high-risk → keep it on the main line or with a stronger model. Complexity matters less than ambiguity: a long but crisp checklist suits a cheap executor; a short, vague judgment call does not. If the work cuts into clear steps with a check between each → hand the steps down; if every step's judgment feeds the next → keep it up here.
+
+**Calibrate verification to what the task can prove.** Prefer deterministic checks (tests, grep gates, hashes, read-backs) over LLM review; review depth is a budget, spent where the task can't check itself. Borderline "does this need a review?" calls can go to a fast local typed-decision gate (choice/score) for a quick suggestion — it suggests, the main line decides. Output nothing can check must be reviewed or re-run; unverified output never gets laundered into a conclusion (an extension of "evidence over self-report"). Confidence in handed-down work comes from checkability, not from model tier.
+
+**Class patterns accumulate.** When the same shape of task shows up again, add a line to [`references/class-playbook.md`](references/class-playbook.md): shape → who ran it → which verification actually caught a problem → review verdict. Learned from real work, not legislated up front; keep the lines short. Whoever runs the work adds the line; mark a line stale when the tooling or models it names change.
+
 ## Unresolved limits (mitigation only — never report as solved)
 
 - **No durable resume.** A cut-off child is rescued by hand or restarted; mitigations: SAVE-EARLY artifacts, staged tasks, narrow re-dispatch, optional manifest protocol (above).
@@ -149,6 +160,7 @@ Harness-specific dispatch mechanics (Hermes example): [`references/hermes-mechan
 
 Adapted from the "Astra + Luna" orchestrator (execution roles at high effort + a strong, low-effort, read-only reviewer) and the sub-agent pattern literature. Method validation report and sources referenced in `references/evidence-index.md`.
 
+- v1.4.0 (2026-09-23) — hand-down guidance (shape-based delegation fit, verification calibration with typed-decision gates, class playbook); intent-driven, no new mandates.
 - v1.3.1 (2026-09-23) — renamed `conductor` → `crew-contract` (marketplace name-uniqueness; method layer unchanged).
 - v1.3.0 (2026-09-23) — model-agnostic route selection (route card + candidate-intersection rule); layered review-independence criterion + review protocol checklist; admission gate + cache-ordered cost levers; ambiguity contract (needs_input return block); optional manifest checkpoint protocol; verification priority; no hardcoded model routes (grep-enforced).
 - v1.2.0 (2026-09-21) — intent-driven defaults, orchestration signals, truncation recovery, unresolved-limits discipline, evidence anchors.
