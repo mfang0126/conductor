@@ -8,7 +8,7 @@ metadata:
     author: Ming Fang
     tags: [delegation, subagents, orchestration, review, workflow]
     category: autonomous-ai-agents
-    related_skills: [hermes-delegation-routing, parallel-workstream-orchestration, subagent-driven-development]
+    related_skills: [dispatching-parallel-agents, subagent-driven-development]
 ---
 
 # Crew Contract — Main–Sub Delegation (主-子分工)
