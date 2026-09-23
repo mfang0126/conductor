@@ -14,6 +14,7 @@ Multi-agent work fails in predictable ways: reviewers grade their own family's o
 - **Delegation contract + copy-paste brief template** — self-contained briefs with budget/stop discipline, an ambiguity contract (`assumptions / needs_input / default_if_forced / blocking_level`), and SAVE-EARLY durability.
 - **Model selection by route card** — no model names hardcoded: candidates come from your runtime's provider registry ∩ your model policy; execution slot and reviewer slot chosen up front, criteria-based (cheap+cache-affine executor, cross-family reviewer when policy allows).
 - **Evidence-backed guardrails** — admission gate (orchestrate only when ≥2 of: parallelizable / exceeds one context window / value covers cost), cache-ordered cost levers, verification priority (deterministic > weak verifiers > LLM judges), optional manifest checkpoint protocol for replay-prone work.
+- **Hand-down guidance by task shape** — judge delegation fit by clarity × verifiability × blast radius, calibrate verification to what the task can prove, and accumulate recipes in a living class playbook.
 - **Honest limits** — reviewer independence is partial, depth-1 children cannot ask questions, no durable resume; documented as open, with mitigations only.
 
 ## Install
@@ -50,6 +51,7 @@ Full rule → source map: [`references/evidence-index.md`](references/evidence-i
 SKILL.md                          # the method layer (harness-agnostic)
 references/
   child-brief-template.md         # copy-paste dispatch template
+  class-playbook.md               # living notebook: task shape → recipe
   evidence-index.md               # rule → public sources
   hermes-mechanics.md             # example adapter for Hermes Agent
 ```

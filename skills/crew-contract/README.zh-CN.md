@@ -14,6 +14,7 @@
 - **派单契约 + 可复制 brief 模板**——自包含派单、预算/停止纪律、歧义契约（`assumptions / needs_input / default_if_forced / blocking_level`）、SAVE-EARLY 落盘韧性。
 - **路线卡式模型选择**——不写死任何模型名：候选 = 运行时 provider 清单 ∩ 你的模型政策；执行槽与评审槽开工前定好，按判据选（执行=便宜+缓存亲和；评审=政策允许时跨家族）。
 - **证据支撑的护栏**——准入闸门（满足 ≥2 条才编排：可并行 / 单上下文装不下 / 价值覆盖成本）、按缓存→路由→effort 排序的成本杠杆、验证优先级（确定性检查 > 弱验证者 > LLM 裁判）、可选 manifest 断点协议。
+- **按任务形状的向下派工引导**——按清晰度 × 可验证性 × 影响面判断派工适配，验证深度校准到任务能自证的程度，协作配方沉淀在持续生长的 class playbook 里。
 - **诚实的局限**——评审独立性是部分的、depth-1 子代理不能提问、无断点续跑；一律列为未解问题，只写缓解不宣称解决。
 
 ## 安装
@@ -50,6 +51,7 @@ npx skills add mfang0126/crew-contract   # 适配 77+ 种 agent CLI
 SKILL.md                          # 方法层（框架无关）
 references/
   child-brief-template.md         # 可复制派单模板
+  class-playbook.md               # 活的笔记本：任务形状 → 协作配方
   evidence-index.md               # 规则 → 公开来源
   hermes-mechanics.md             # Hermes Agent 适配示例
 ```
