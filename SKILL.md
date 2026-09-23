@@ -131,7 +131,7 @@ Reporting rule: present these as open, mitigations in progress — never as reso
 ## Theory basis
 
 - **Context hygiene is the primary value of subagents** (not specialization): verbose output and intermediate reasoning die in the child context; the main thread keeps the goal, constraints, evidence, judgment.
-- **Separation of duties**: explore / implement / verify / review are distinct roles; generation and verification never share a context.
+- **Separation of duties**: explore / implement / verify / review are distinct roles; the generator and the verifier always work in different contexts.
 - **Non-overlapping ownership**: one writer per area; prevents merge chaos.
 - **Evidence over self-report**: child summaries are claims; the main checks artifacts, diffs, commands, hashes.
 - **Fail-closed scope**: silent scope expansion is the failure mode this method exists to prevent.
